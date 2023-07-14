@@ -89,14 +89,20 @@
                 </div>
                 <h4>Profissionais</h4>
                 <div class="form-group">
-                    <label for="usuaria">Profissão</label>
-                    <input class="form-control" type="text" name="usuaria"
-                        id="usuaria" placeholder="Digite a profissão mais recente que exerceu">
+                    <label for="usuaria">Selecione a profissão mais recente que exerceu</label>
+                    <select class="form-control">
+                        <option>Selecionar</option>
+                        <option>ANALISTA DE SISTEMA</option>
+                        <option>PRODUCT OWNER</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="usuaria">Empresa</label>
-                    <input class="form-control" type="text" name="usuaria"
-                        id="usuaria" placeholder="Digite a empresa mais recente que trabalhou">
+                    <label for="usuaria">Selecione a empresa mais recente que atuou</label>
+                    <select class="form-control">
+                        <option>Selecionar</option>
+                        <option>MJV</option>
+                        <option>MICROSOFT</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="usuaria">Salário</label>
@@ -116,17 +122,14 @@
                     <label for="usuaria">Selecione as habilidades que possui</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <button (click)="selectHab('habjava')" [ngClass]="{'input-group-text': true, 'active': selectedHab === 'habjava'}" id="habjava" class="btn btn-outline-secondary input-group-text" type="button">JAVA</button>
-                      <button id="habmysql" class="btn btn-outline-secondary input-group-text" type="button">MYSQL</button>
-                      <button (click)="toggleHab(hab)" [ngClass]="{'input-group-text': true, 'active': hab.isSelected}" *ngFor="let hab of habs" {{ hab.label }} id="habmysql" class="btn btn-outline-secondary input-group-text" type="button" onclick="active" id="habmysql" class="btn btn-outline-secondary input-group-text" type="button">MYSQL</button>
-                      <button id="habspring" class="btn btn-outline-secondary input-group-text" type="button">SPRING</button>
-                      <button id="habpostgres" class="btn btn-outline-secondary input-group-text" type="button">POSTGRES</button>
-                      <button id="habpython" class="btn btn-outline-secondary input-group-text" type="button">PYTHON</button>
-                      <button id="habnodejs" class="btn btn-outline-secondary input-group-text" type="button">NODEJS</button>
-                      <button id="habangular" class="btn btn-outline-secondary input-group-text" type="button">ANGULAR</button>
-                      <button id="habscrum" class="btn btn-outline-secondary input-group-text" type="button">SCRUM</button>
+                    <ul>
+                        <li *ngFor="let item of items" class="lista-habs">
+                          <button (click)="adicionarItem(item)" [ngClass]="{'input-group-text': true, 'active': item.isSelected}" id="list-hab" 
+                          class="btn btn-outline-secondary input-group-text mr-5" type="button">{{ item.label }}</button>
+                        </li>
+                      </ul>
+                      <button class="btn btn-outline-primary input-group-text" (click)="mostrarLista()">Veja as habilidades selecionadas</button>
                     </div>
-                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
                   </div>
                 </div>
             </div>

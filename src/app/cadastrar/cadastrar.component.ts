@@ -8,24 +8,31 @@ import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 
 export class CadastrarComponent {
 
-  hab: Array<string> = [];
-
-  selectedHab!: string;
-
-  selectHab(hab: string) {
-  this.selectedHab = hab; 
-}
-
-@ViewChildren('habs') itemsElements!: QueryList<ElementRef>;
-
-  habs = [
-    { label: 'Item 1', isSelected: false },
-    { label: 'Item 2', isSelected: false },
-    { label: 'Item 3', isSelected: false },
-    // ... outros itens
+  items = [
+    { label: 'java', isSelected: false },
+    { label: 'mysql', isSelected: false },
+    { label: 'spring', isSelected: false },
+    { label: 'postgres', isSelected: false },
+    { label: 'python', isSelected: false },
+    { label: 'nodejs', isSelected: false },
+    { label: 'angular', isSelected: false },
+    { label: 'scrum', isSelected: false }
   ];
 
-  toggleHab(hab: any) {
-    hab.isSelected = !hab.isSelected;
+  itensSelecionados: any[] = [];
+  adicionarItem(item: any) {
+    const itemIndex = this.itensSelecionados.findIndex((i) => i.label === item.label);
+
+    if (itemIndex === -1) {
+      this.itensSelecionados.push(item);
+      item.isSelected === true;
+    } else {
+      this.itensSelecionados.splice(itemIndex, 1);
+    }
+  }
+
+  mostrarLista() {
+    console.log(this.itensSelecionados);
+    this.itensSelecionados;
   }
 }
