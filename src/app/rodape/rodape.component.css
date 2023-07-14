@@ -1,0 +1,38 @@
+.bg-person {
+    background: linear-gradient(90deg, rgb(174, 170, 175) 0%, rgb(152, 148, 153) 35%, rgb(242, 234, 245) 100%);
+}
+
+li {
+    color: #061558;
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    color: #061558;
+}
+
+ul.social-network {
+    list-style: none;
+    padding: 0%;
+}
+
+ul.social-network li {
+    margin: 0;
+    padding: 7px;
+}
+
+.fa {
+    font-size: 18pt;
+    padding: 10px;
+}
+
+.fa-envelope-o {
+    font-size: 13pt;
+}
+
+.text-gray {
+    color: gray;
+}
