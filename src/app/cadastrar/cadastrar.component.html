@@ -1,1 +1,135 @@
-<p>cadastrar</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="mt-5 mb-5">
+            <div class="row d-flex justify-content-center">
+                <h1 class="text-center">Cadastre seus dados</h1>
+                <h4>Pessoais</h4>
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input class="form-control" type="text" name="nome" id="nome"
+                        placeholder="Digite seu nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">CPF</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="Digite apenas os números">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">Data de nascimento</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="Digite apenas os números">
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Sexo</label>
+                    <select class="form-control">
+                        <option>Selecione uma opção</option>
+                        <option value="normal">Feminino</option>
+                        <option value="adm">Masculino</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="foto">Link da foto</label>
+                    <input class="form-control" type="text" name="foto" id="foto"
+                        placeholder="Cole o link da sua foto aqui (pode usar o imgur.com, por exemplo)">
+                </div>
+                <h4>Endereço</h4>
+                <div class="form-group">
+                    <label for="usuaria">Logradouro</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">Número</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">Complemento</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">Bairro</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">Cidade</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">Estado</label>
+                    <select class="form-control">
+                        <option>Selecione uma opção</option>
+                        </select>
+                <h4>Contatos</h4>
+                <div class="form-group">
+                    <label for="usuaria">Email</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">Telefone</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">Celular</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">O celular tem whatsapp?</label>
+                    <select class="form-control">
+                        <option>Escolha sim ou não</option>
+                        <option>Sim</option>
+                        <option>Não</option>
+                    </select>
+                </div>
+                <h4>Profissionais</h4>
+                <div class="form-group">
+                    <label for="usuaria">Profissão</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="Digite a profissão mais recente que exerceu">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">Empresa</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="Digite a empresa mais recente que trabalhou">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">Salário</label>
+                    <input class="form-control" type="text" name="usuaria"
+                        id="usuaria" placeholder="Digite o seu salário mais recente (apenas números)">
+                </div>
+                <div class="form-group">
+                    <label for="usuaria">É seu emprego atual?</label>
+                    <select class="form-control">
+                        <option>Escolha sim ou não</option>
+                        <option>Sim</option>
+                        <option>Não</option>
+                    </select>
+                </div>
+                <h4>Habilidades</h4>
+                <div class="form-group">
+                    <label for="usuaria">Selecione as habilidades que possui</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <button (click)="selectHab('habjava')" [ngClass]="{'input-group-text': true, 'active': selectedHab === 'habjava'}" id="habjava" class="btn btn-outline-secondary input-group-text" type="button">JAVA</button>
+                      <button id="habmysql" class="btn btn-outline-secondary input-group-text" type="button">MYSQL</button>
+                      <button (click)="toggleHab(hab)" [ngClass]="{'input-group-text': true, 'active': hab.isSelected}" *ngFor="let hab of habs" {{ hab.label }} id="habmysql" class="btn btn-outline-secondary input-group-text" type="button" onclick="active" id="habmysql" class="btn btn-outline-secondary input-group-text" type="button">MYSQL</button>
+                      <button id="habspring" class="btn btn-outline-secondary input-group-text" type="button">SPRING</button>
+                      <button id="habpostgres" class="btn btn-outline-secondary input-group-text" type="button">POSTGRES</button>
+                      <button id="habpython" class="btn btn-outline-secondary input-group-text" type="button">PYTHON</button>
+                      <button id="habnodejs" class="btn btn-outline-secondary input-group-text" type="button">NODEJS</button>
+                      <button id="habangular" class="btn btn-outline-secondary input-group-text" type="button">ANGULAR</button>
+                      <button id="habscrum" class="btn btn-outline-secondary input-group-text" type="button">SCRUM</button>
+                    </div>
+                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
